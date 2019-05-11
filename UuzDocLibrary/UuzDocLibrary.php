@@ -48,6 +48,7 @@ class UuzDocLibrary{
         // 注册模型
         $models = [
             APP_ROOT. "/App/Parser/DirParser.php",
+            APP_ROOT. "/App/Parser/MdParser.php",
         ];
 
 
