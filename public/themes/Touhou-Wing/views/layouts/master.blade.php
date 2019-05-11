@@ -27,7 +27,8 @@
             font-family: 'Noto Sans SC', sans-serif;
 
             background-color: rgba(249,249,249,0.94);
-            background-image: url("{{ asset("/images/") }}");
+            background-image: url("{{ asset("/images/background-images/") . rand(1,2) . ".jpg" }}");
+            background-repeat: no-repeat;
         }
 
         a{
@@ -56,9 +57,12 @@
 </div>
 
 <div class="mdui-drawer" style="border-right: 1px solid rgba(229,229,229,0.94); overflow: auto;" id="doc-list">
-    <div class="logo" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
-        <img class="" style="width: 100%;" src="{{ asset("/favicon.png") }}">
-        <p style="text-align: center; font-size: 24px;">{{ env("APP_NAME") }}</p>
+    <div class="logo mdui-col-md-12" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
+        <div class="img-control">
+            <img style="width: 100%;" src="{{ asset("/favicon.png") }}">
+            <p style="text-align: center; font-size: 24px; margin-top: 12px; margin-bottom: 6px;">{{ env("APP_NAME") }}</p>
+        </div>
+
     </div>
 
     <ul class="mdui-list" mdui-collapse="{accordion: true}">
