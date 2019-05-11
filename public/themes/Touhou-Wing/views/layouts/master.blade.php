@@ -107,7 +107,6 @@
 
 <div class="frame">
     @yield("content")
-    <pre>{{ print_r((new \App\Parser\DirParser())->getDirectoryTree(APP_ROOT . env("DOC_PATH"))) }}</pre>
 </div>
 
 </body>

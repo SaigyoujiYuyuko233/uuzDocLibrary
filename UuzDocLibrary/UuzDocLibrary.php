@@ -38,9 +38,27 @@ class UuzDocLibrary{
         // 加载方法
         require_once APP_ROOT . "/UuzDocLibrary/Functions.php";
 
+        // 注册控制器
+        $controllers = [
+            APP_ROOT. "/App/Http/Pages/HomeController.php",
+
+            APP_ROOT. "/App/Http/Document/ReadController.php",
+        ];
+
+        // 注册模型
+        $models = [
+            APP_ROOT. "/App/Parser/DirParser.php",
+        ];
+
+
         // 加载文件
-        require_once APP_ROOT. "/App/Http/Pages/HomeController.php";
-        require_once APP_ROOT. "/App/Parser/DirParser.php";
+        for ($i = 0; $i < count($controllers); $i++){
+            require_once $controllers[$i];
+        }
+
+        for ($i = 0; $i < count($models); $i++){
+            require_once $models[$i];
+        }
 
     }
 
