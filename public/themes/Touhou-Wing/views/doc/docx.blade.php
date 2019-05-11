@@ -16,12 +16,13 @@
 @section("action") {{ $docName }} @endsection
 
 @section("content")
-    <div class="md-container">
-        <h1 style="margin-bottom: 4px">{{ $docName }}</h1>
-        <hr style="margin-bottom: 30px;">
-        <div class="markdown-body">
-            {!! $markdown !!}
+    <div class="mdui-center" style="margin-top: 80px;">
+        <div class="mdui-container">
+            <div class="docx">
+                <h1 style="margin-bottom: 4px">{{ $docName }}</h1>
+                <hr style="margin-bottom: 30px;">
+                {!! $docx !!}
+            </div>
         </div>
     </div>
-
 @endsection

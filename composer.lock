@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e448b81d6d9ecb62f46509e622abd50",
+    "content-hash": "967f7a0872a6d540002a4108f2b8264f",
     "packages": [
         {
             "name": "bramus/router",
@@ -569,6 +569,42 @@
                 "time"
             ],
             "time": "2019-04-27T18:04:27+00:00"
+        },
+        {
+            "name": "philgale92/docx",
+            "version": "3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhilGale92/docx.git",
+                "reference": "9be3ad9eaa245de93b598c957e6ca0307df6eb44"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhilGale92/docx/zipball/9be3ad9eaa245de93b598c957e6ca0307df6eb44",
+                "reference": "9be3ad9eaa245de93b598c957e6ca0307df6eb44",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PhilGale92Docx": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Gale",
+                    "email": "phil.gale92@gmail.com"
+                }
+            ],
+            "description": "PHP Based Docx Parser",
+            "time": "2019-03-04T10:51:02+00:00"
         },
         {
             "name": "phpoption/phpoption",

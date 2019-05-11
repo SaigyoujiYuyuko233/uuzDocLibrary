@@ -14,11 +14,12 @@ namespace App\Controller\Document;
 use App\Parser\DocListParser;
 use App\Parser\DirParser;
 use App\Parser\MdParser;
+use PhilGale92Docx\Docx;
+use WordParser\WordParser;
 
 class ReadController{
 
     public function show($doc){
-
 
         // 文档路径
         $path = APP_ROOT . env("DOC_PATH") . "/" . str_replace("|", "/", $doc);
@@ -29,17 +30,47 @@ class ReadController{
             return;
         }
 
-        // 解析器
-        $markdownParser = new MdParser();
+        // 获取文件拓展名
+        $fileFormat = pathinfo($path)['extension'];
 
-        // 解析
-        $markdown = $markdownParser->mdParser($path);
+        // 原始 html
+        $markdown = '';
 
-        // 渲染视图
-        echo views()->render("doc.markdown", [
-            "docName" => basename($path),
-            "markdown" => $markdown
-        ]);
+
+        // md 文件
+        if ($fileFormat == "md"){
+
+            // 解析器
+            $markdownParser = new MdParser();
+
+            // 解析
+            $markdown = $markdownParser->mdParser($path);
+
+            // 渲染视图
+
+            echo views()->render("doc.markdown", [
+                "docName" => basename($path),
+                "markdown" => $markdown
+            ]);
+
+            return;
+        }
+
+        // word 文件
+        if ($fileFormat == "docx" || $fileFormat == "doc"){
+
+            // 解析
+            $docx = new Docx($path);
+            $docxHtml = $docx->render(Docx::RENDER_MODE_HTML);
+
+            // 渲染视图
+            echo views()->render("doc.docx", [
+                "docName" => basename($path),
+                "docx" => $docxHtml
+            ]);
+
+            return;
+        }
 
         return;
 

@@ -39,7 +39,7 @@
             background: #1396FF;
         }
 
-        .markdown-body {
+        .md-container {
             box-sizing: border-box;
             min-width: 200px;
             max-width: 980px;
@@ -48,9 +48,51 @@
         }
 
         @media (max-width: 767px) {
-            .markdown-body {
+            .md-container {
                 padding: 15px;
             }
+        }
+
+        .docx table {
+            border-collapse:collapse;
+        }
+
+        .docx th {
+            text-align: left;
+            text-transform: none;
+        }
+
+        .docx td, th {
+            vertical-align:top;
+            background-clip:padding-box;
+            border:1px solid #000000;
+            color: #414042;
+            height: 34px;
+            padding-left: 6px;
+            position: relative;
+        }
+
+        .docx td.has_subcell  {
+            padding-left:0;
+        }
+
+        .docx table table {
+            width:100%;
+        }
+
+        .docx td td {
+            height:72px;
+            border:none;
+            border-bottom:1px solid black;
+            min-width:110px;
+        }
+
+        .docx td table tr:last-of-type td {
+            border-bottom:0;
+        }
+
+        .docx span.indent {
+            padding-left:36px;
         }
     </style>
 
