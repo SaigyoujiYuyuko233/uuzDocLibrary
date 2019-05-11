@@ -12,7 +12,7 @@
 
 <html lang="zh-cn">
 <head>
-    <title>@yield("action") | {{ env("APP_NAME") }}</title>
+    <title>{{ env("APP_NAME") }}</title>
 
     <link href="https://cdn.bootcss.com/mdui/0.4.2/css/mdui.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/github-markdown-css/3.0.1/github-markdown.css" rel="stylesheet">
@@ -28,8 +28,6 @@
             font-family: 'Noto Sans SC', sans-serif;
 
             background-color: rgba(249,249,249,0.94);
-            background-image: url("{{ asset("/images/background-images/") . rand(1,2) . ".jpg" }}");
-            background-repeat: no-repeat;
         }
 
         a{
@@ -68,7 +66,8 @@
 
     <div class="mdui-collapse" mdui-collapse>
         <ul class="mdui-list" mdui-collapse="{accordion: false}">
-            {!! $doc_list !!}
+            <?php $dirTree = (new \App\Parser\DirParser())->getDirectoryTree(APP_ROOT . env("DOC_PATH")) ?>
+            {!! (new \App\Parser\DocListParser())->htmlParser($dirTree) !!}
         </ul>
     </div>
 
@@ -85,15 +84,18 @@
 
     function doc(val) {
 
-        var nodeParents = $(".mdui-list-item[value='" + val + "']").parents();
-        var finder=new RegExp('path=');
-        var path = "";
+        let nodeParents = $(".mdui-list-item[value='" + val + "']").parents();
+        let finder=new RegExp('path=');
+        let path = "";
 
-        for (var i = 0; i < nodeParents.length; i++){
+        for (let i = nodeParents.length - 1; i >= 0; i--){
 
-            // 判断是否带有 path= 标识符
-            if (finder.test(nodeParents[i].id) == true){
-                path += nodeParents[i].id.replace("path=","") + "|";
+            // 判断标签 ul only
+            if (nodeParents[i].localName === "ul"){
+                // 判断是否带有 path= 标识符
+                if (finder.test(nodeParents[i].id) === true){
+                    path += nodeParents[i].id.replace("path=","") + "|";
+                }
             }
 
         }
@@ -102,12 +104,14 @@
         path += val;
 
         // 跳转
-        window.location.href = '/uuzDoc/read/' + path;
+        $(".iframe").attr("src", '/uuzDoc/read/' + path);
     };
 </script>
 
-<div class="frame">
-    @yield("content")
+<div class="frame" style="overflow: auto;">
+    <iframe class="iframe" src="/home" style="border: 0; height: calc(100% - 64px); width: 100%;">
+
+    </iframe>
 </div>
 
 </body>

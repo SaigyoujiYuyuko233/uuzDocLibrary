@@ -11,3 +11,12 @@
 ?>
 
 
+@extends("layouts.container")
+
+@section("action") {{ $docName }} @endsection
+
+@section("content")
+    <div class="markdown-body">
+        {!! $markdown !!}
+    </div>
+@endsection

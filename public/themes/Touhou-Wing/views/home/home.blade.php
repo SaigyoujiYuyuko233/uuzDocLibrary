@@ -10,7 +10,9 @@
  */
 ?>
 
-@extends("layouts.master")
+@extends("layouts.container")
+
+@section("action") 主页 @endsection
 
 @section("content")
     <div class="mdui-container" style="margin-top: 20px;">

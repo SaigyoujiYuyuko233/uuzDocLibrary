@@ -11,7 +11,7 @@
 
 namespace App\Parser;
 
-use Parsedown;
+use \Parsedown;
 
 class MdParser{
 

@@ -11,11 +11,38 @@
 
 namespace App\Controller\Document;
 
+use App\Parser\DocListParser;
+use App\Parser\DirParser;
+use App\Parser\MdParser;
 
 class ReadController{
 
     public function show($doc){
-        echo $doc;
+
+
+        // 文档路径
+        $path = APP_ROOT . env("DOC_PATH") . "/" . str_replace("|", "/", $doc);
+
+        // 文件不存在 - 404
+        if (is_file($path) == false){
+            echo views()->render("HttpCode.404");
+            return;
+        }
+
+        // 解析器
+        $markdownParser = new MdParser();
+
+        // 解析
+        $markdown = $markdownParser->mdParser($path);
+
+        // 渲染视图
+        echo views()->render("doc.markdown", [
+            "docName" => basename($path),
+            "markdown" => $markdown
+        ]);
+
+        return;
+
     }
 
 }

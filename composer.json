@@ -1,10 +1,11 @@
 {
-    "require-dev": {
+  "require-dev": {
         "laravel/homestead": "^8.4"
     },
     "require": {
         "bramus/router": "^1.4",
         "jenssegers/blade": "^1.1",
-        "vlucas/phpdotenv": "^3.3"
+        "vlucas/phpdotenv": "^3.3",
+        "erusev/parsedown": "^1.7"
     }
 }
