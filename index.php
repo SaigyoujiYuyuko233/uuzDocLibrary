@@ -19,4 +19,3 @@ require_once "UuzDocLibrary/Functions.php";
 // 启动框架
 $core = new \UuzDocLibrary\UuzDocLibrary();
 $core->run();
-

@@ -11,46 +11,45 @@
 
 namespace UuzDocLibrary;
 
+use Bramus\Router\Router;
+use Dotenv\Dotenv;
+
 require_once APP_ROOT . "/vendor/autoload.php";
 
 class UuzDocLibrary{
-
-    public static $env;
 
     public function run(){
 
         // 初始化框架
         $this->init();
 
-        // 读取配置
-        $this->loadConf();
-
         // 加载路由
+        $this->loadRouter();
 
     }
 
-    private function loadConf(){
-        $file = file(APP_ROOT . "/.env");
-
-        print_r($file);
-
-        for ($i = 0; $i < count($file); $i++){
-            $conf = str_replace("\n", "", $file[$i]);
-
-            $key = explode("=", $conf)[0];
-            //$value = explode("=", $conf)[1];
-
-
-
-            //self::$env[$key] = "a";
-        }
-    }
 
     private function init(){
+
+        // 加载.env
+        $dotEnv = Dotenv::create(APP_ROOT);
+        $dotEnv->load();
 
         // 加载方法
         require_once APP_ROOT . "/UuzDocLibrary/Functions.php";
 
+        // 加载文件
+        require_once APP_ROOT. "/App/Http/Pages/HomeController.php";
+        require_once APP_ROOT. "/App/Parser/DirParser.php";
+
     }
 
+
+    private function loadRouter(){
+        $router = new Router();
+
+        require APP_ROOT . "/UuzDocLibrary/router/web.php";
+
+        $router->run();
+    }
 }
