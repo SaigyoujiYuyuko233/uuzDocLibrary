@@ -12,7 +12,7 @@
 
 <html lang="zh-cn">
 <head>
-    <title> {{ env("APP_NAME") }} - @yield("action")</title>
+    <title>@yield("action") | {{ env("APP_NAME") }}</title>
 
     <link href="https://cdn.bootcss.com/mdui/0.4.2/css/mdui.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/limonte-sweetalert2/7.33.0/sweetalert2.css" rel="stylesheet">
@@ -57,7 +57,7 @@
 
 <div class="mdui-drawer" style="border-right: 1px solid rgba(229,229,229,0.94); overflow: auto;" id="doc-list">
     <div class="logo" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
-        <img style="width: 100%;" src="{{ asset("/favicon.png") }}">
+        <img class="" style="width: 100%;" src="{{ asset("/favicon.png") }}">
         <p style="text-align: center; font-size: 24px;">{{ env("APP_NAME") }}</p>
     </div>
 
@@ -79,8 +79,6 @@
 
 <div class="frame">
     @yield("content")
-
-    <pre>{{ print_r((new \App\Parser\DirParser())->getDirectoryTree(APP_ROOT . env("DOC_PATH"))) }}</pre>
 </div>
 
 </body>
