@@ -46,7 +46,9 @@ class HomeController{
                                     <div class="mdui-list-item-content">' . $key . '</div>
                                     <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
                                 </div>
-                                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">' . $tmp . '</ul>';
+                                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                                     <ul class="mdui-list" mdui-collapse="{accordion: false}">
+                                    ' . $tmp . '</ul></ul>';
 
                 continue;
             }

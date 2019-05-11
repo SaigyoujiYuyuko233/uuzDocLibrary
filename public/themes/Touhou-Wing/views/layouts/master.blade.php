@@ -80,25 +80,6 @@
 <div class="frame">
     @yield("content")
 
-    <ul class="mdui-list" mdui-collapse="{accordion: true}">
-
-        <li class="mdui-collapse-item mdui-collapse-item-open">
-            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                <i class="mdui-list-item-icon mdui-icon material-icons">people</i>
-                <div class="mdui-list-item-content">Audience</div>
-                <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
-            </div>
-            <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-                <li class="mdui-list-item mdui-ripple">Overview</li>
-                <li class="mdui-list-item mdui-ripple">Language</li>
-                <li class="mdui-list-item mdui-ripple">Location</li>
-                <li class="mdui-list-item mdui-ripple">New vs Returning</li>
-            </ul>
-        </li>
-
-
-    </ul>
-
     <pre>{{ print_r((new \App\Parser\DirParser())->getDirectoryTree(APP_ROOT . env("DOC_PATH"))) }}</pre>
 </div>
 
