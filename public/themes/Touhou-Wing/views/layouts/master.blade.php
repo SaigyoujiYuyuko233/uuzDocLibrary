@@ -58,7 +58,7 @@
 <div class="mdui-drawer" style="border-right: 1px solid rgba(229,229,229,0.94); overflow: auto;" id="doc-list">
     <div class="logo" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
         <img style="width: 100%;" src="{{ asset("/favicon.png") }}">
-        <p>{{ env("APP_NAME") }}</p>
+        <p style="text-align: center; font-size: 24px;">{{ env("APP_NAME") }}</p>
     </div>
 
     <ul class="mdui-list" mdui-collapse="{accordion: true}">
