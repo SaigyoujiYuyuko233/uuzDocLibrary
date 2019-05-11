@@ -57,7 +57,7 @@
 </div>
 
 <div class="mdui-drawer" style="border-right: 1px solid rgba(229,229,229,0.94); overflow: auto;" id="doc-list">
-    <div class="logo mdui-col-md-12" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
+    <div class="logo mdui-col-md-12 logo mdui-col-sm-0" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
         <div class="img-control">
             <img style="width: 100%;" src="{{ asset("/favicon.png") }}">
             <p style="text-align: center; font-size: 24px; margin-top: 12px; margin-bottom: 6px;">{{ env("APP_NAME") }}</p>
@@ -65,9 +65,11 @@
 
     </div>
 
-    <ul class="mdui-list" mdui-collapse="{accordion: true}">
-        {!! $doc_list !!}
-    </ul>
+    <div class="mdui-collapse" mdui-collapse>
+        <ul class="mdui-list" mdui-collapse="{accordion: false}">
+            {!! $doc_list !!}
+        </ul>
+    </div>
 
 </div>
 
@@ -77,12 +79,35 @@
 
 <script>
     $(document).ready(function () {
-        var inst = new mdui.Collapse(selector, options);
+        mdui.mutation();
     });
+
+    function doc(val) {
+
+        var nodeParents = $(".mdui-list-item[value='" + val + "']").parents();
+        var finder=new RegExp('path=');
+        var path = "";
+
+        for (var i = 0; i < nodeParents.length; i++){
+
+            // 判断是否带有 path= 标识符
+            if (finder.test(nodeParents[i].id) == true){
+                path += nodeParents[i].id.replace("path=","") + "|";
+            }
+
+        }
+
+        // 加上文件名
+        path += val;
+
+        // 跳转
+        window.location.href = '/uuzDoc/read/' + path;
+    };
 </script>
 
 <div class="frame">
     @yield("content")
+    <pre>{{ print_r((new \App\Parser\DirParser())->getDirectoryTree(APP_ROOT . env("DOC_PATH"))) }}</pre>
 </div>
 
 </body>

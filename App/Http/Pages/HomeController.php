@@ -40,14 +40,14 @@ class HomeController{
 
                 $tmp = $this->dirParser($value);
 
-                $dir_html .= '<li class="mdui-collapse-item mdui-collapse-item-open">
+                $dir_html .= '<li class="mdui-collapse-item">
                                 <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
                                     <i class="mdui-list-item-icon mdui-icon material-icons">folder</i>
                                     <div class="mdui-list-item-content">' . $key . '</div>
                                     <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
                                 </div>
                                     <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-                                     <ul class="mdui-list" mdui-collapse="{accordion: false}">
+                                     <ul class="mdui-list" mdui-collapse="{accordion: false}" id="path=' . $key . '">
                                     ' . $tmp . '</ul></ul>';
 
                 continue;
@@ -56,8 +56,7 @@ class HomeController{
 
             // 如果不是数组 - 文件
             if (is_array($value) == false){
-
-                $file_html .= "  <li class=\"mdui-list-item mdui-ripple\">
+                $file_html .= "  <li class=\"mdui-list-item mdui-ripple\" value='$value' onclick='doc(\"$value\");'>
                                     <i class=\"mdui-list-item-icon mdui-icon material-icons\">&#xe865;</i>
                                     <div class=\"mdui-list-item-content\">$value</div>
                                   </li>";
