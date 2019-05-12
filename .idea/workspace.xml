@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="080c71fd-bb70-44fa-9349-78f429afb186" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +49,7 @@
         <counts>
           <entry key="env" value="62" />
           <entry key="example" value="79" />
-          <entry key="gitattributes" value="15" />
+          <entry key="gitattributes" value="28" />
           <entry key="gitignore" value="38" />
           <entry key="json" value="10" />
           <entry key="md" value="193" />
@@ -66,7 +66,7 @@
           <entry key="JSON" value="10" />
           <entry key="Markdown" value="193" />
           <entry key="PHP" value="4099" />
-          <entry key="PLAIN_TEXT" value="68" />
+          <entry key="PLAIN_TEXT" value="81" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -165,8 +165,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitattributes">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="37" lean-forward="true" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -444,12 +444,12 @@
       <updated>1557298099865</updated>
       <workItem from="1557298105616" duration="7082000" />
       <workItem from="1557488641121" duration="8633000" />
-      <workItem from="1557498776935" duration="46122000" />
+      <workItem from="1557498776935" duration="46259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61837000" />
+    <option name="totallyTimeSpent" value="61974000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -780,8 +780,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="37" lean-forward="true" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
