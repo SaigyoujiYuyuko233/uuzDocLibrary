@@ -43,8 +43,14 @@
             box-sizing: border-box;
             min-width: 200px;
             max-width: 980px;
-            margin: 0 auto;
             padding: 45px;
+
+            margin-left: 6%;
+            vertical-align:top;
+            background-clip:padding-box;
+            color: #414042;
+            height: 34px;
+            position: relative;
         }
 
         .markdown-body{
