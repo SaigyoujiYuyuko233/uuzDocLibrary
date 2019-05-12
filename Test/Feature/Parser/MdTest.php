@@ -34,11 +34,11 @@ class MdTest extends TestCase{
         $markdown = new MdParser();
         $doc = $markdown->mdParser($path);
 
-        if ($doc != null){
-            echo $color->apply("magenta","\n[Testing]");
-            echo $color->apply("light_blue","[Access/GameTest] ");
-            echo $color->apply("light_green","Successfully to access '/view/resources/games' - 200 √\n");
-        }
+        echo $color->apply("magenta","\n[Testing]");
+        echo $color->apply("light_blue","[Parser/MdTest] ");
+        echo $color->apply("light_green","Successfully to parsing the markdown file. Out put:\n");
+
+        echo $color->apply("light_gray", $doc);
 
     }
 
