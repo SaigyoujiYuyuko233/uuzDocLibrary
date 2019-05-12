@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":148:{a:2:{s:7:"defects";a:1:{s:38:"Test\Feature\Parser\MdTest::testParser";i:5;}s:5:"times";a:1:{s:38:"Test\Feature\Parser\MdTest::testParser";d:0.113;}}}

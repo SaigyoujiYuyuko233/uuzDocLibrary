@@ -23,10 +23,13 @@ class MdTest extends TestCase{
         $color = new Color();
 
         // 生成md文件
-        mkdir("./public/documents/");
+        if (is_dir("./public/documents/") == false){
+            mkdir("./public/documents/");
+        }
+
         $path = "./public/documents/markdown.md";
 
-        file_put_contents($path,"## Test \n > Test");
+        file_put_contents($path,"## Tests \n > Tests");
 
         // 开始解析
         require_once "./App/Parser/MdParser.php";
@@ -38,7 +41,7 @@ class MdTest extends TestCase{
         echo $color->apply("light_blue","[Parser/MdTest] ");
         echo $color->apply("light_green","Successfully to parsing the markdown file. Out put:\n");
 
-        echo $color->apply("light_gray", $doc);
+        echo $color->apply("light_gray", $doc . "\n");
 
     }
 
