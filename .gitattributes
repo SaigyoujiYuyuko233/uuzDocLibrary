@@ -1,2 +1,2 @@
-idea/resouces_lib/*.css linguist-language=php
-idea/resouces_lib/*.js linguist-language=php
+*.css linguist-language=php
+*.js linguist-language=php
