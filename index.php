@@ -12,7 +12,7 @@
 // defined var
 define("APP_ROOT", __DIR__);
 define("APP_VERSION", "1.0.0");
-define("APP_ISSUE", "0016");
+define("APP_ISSUE", "0017");
 define("APP_START", microtime(true));
 
 // require files

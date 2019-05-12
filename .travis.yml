@@ -34,14 +34,16 @@ notifications:
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-- git add .
 - tar --exclude="./public/resources" --exclude="./Vagrantfile" --exclude="./.env.travis"
   --exclude="./env" --exclude="./.vagrant" --exclude="./Homestead.yaml" --exclude="./.idea"
   --exclude="./.git" --exclude="./vendor"  -cvPf UuzDocLibrary.tar ./*
+- git update-index --assume-unchanged .env
 
 deploy:
 
   provider: releases
+
+  skip_cleanup: true
 
   api_key:
     secure: gIUi7a/Dj7kokdpnVYZG7OkC+GjzBUtQ6cQ/rEc8EblthLFInrQ7U4iAbL+su2VG7QjD+p4/dj3OqRsTJoi52ZkmzQFWoWMlR0NCJJwL5x1SzF6+neWRG3WjsYRFLvGk3trMScRHdIgi4apkkQrGyb8CWt5U0g+j8nypzUBF23EHU/FY/8qbEwfOsfmBRlQTxsjFmIaOc32eGucMAPysOu1TxOD16omEWgoI2XcqE3JcIffEUmK0CyKgG3FlaLgG4uWipvWS85slYfICtp86HQic7Q9xiVZ8fwXkLoLvBoxFIbcCINkEAG+V3FtNEQtezu7vGuVMfgM+DakJl6BpZAUrN7Rn22+rJAsbT25ue2DGxTfI3++vb/09jWAA9zrzeuyTtrD08XfeuhhKywhFWlaKA7QmsN8cj3Mblo4soX3ZXOC+Z01tFWvtORBUelFKSrOSBsFPT6WabmXiIQ2AANr8DaML+FAVutJvwMF+dvUdFyjUA0+dBC+YpM2lbYPizAdwVnBUo2YBx86cgjQl/BlWY8OVXhDY50l7mlN7kzBm4CsCzi+Fv8apDDUlN885zWhbPcwbTY5FkG36M17/vkiU8pYVxgGUVQD628rMOqSiGhIDNUTnhVmoYQI1rve1+R0q6TbmDUg6DZzXzsTD+Iwm0e6u0OrMJDNralQHXtc=
