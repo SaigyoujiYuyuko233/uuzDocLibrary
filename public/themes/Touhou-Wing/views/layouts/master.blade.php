@@ -67,7 +67,10 @@
     <div class="logo" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
         <div class="img-control">
             <img style="width: 100%;" src="{{ asset("/favicon.png") }}">
-            <p style="text-align: center; font-size: 24px; margin-top: 12px; margin-bottom: 6px;">{{ env("APP_NAME") }}</p>
+            <p style="text-align: center; font-size: 24px; margin-top: 12px; margin-bottom: 2px;">{{ env("APP_NAME") }}</p>
+            <p style="text-align: center; font-size: 14px; margin-top: 2px; margin-bottom: 6px;" class="mdui-typo">
+                © 2019 - {{ date("Y", time()) }} <a href="https://github.com/SaigyoujiYuyuko233">SaigyoujiYuyuko</a>
+            </p>
         </div>
 
     </div>
@@ -77,6 +80,21 @@
             <?php $dirTree = (new \App\Parser\DirParser())->getDirectoryTree(APP_ROOT . env("DOC_PATH")) ?>
             {!! (new \App\Parser\DocListParser())->htmlParser($dirTree) !!}
         </ul>
+    </div>
+
+    <div class="bottom-bar mdui-typo" style="position: absolute; bottom: 0; width: 100%;">
+
+        <div class="link-bar" style="text-align: center">
+            <p style="margin-bottom: 2px;"><a href="https://th-res.yoyoko233.top:9000/">东方万物集</a></p>
+            <p style="margin-bottom: 2px;">开源地址:<a href="https://github.com/SaigyoujiYuyuko233/uuzDocLibrary">uuzDocLibrary</a> - GPLv3</p>
+        </div>
+
+        <div class="information mdui-valign" style="font-size: 14px; height: 38px; border-top: rgba(229,229,229,0.94) 1px solid;">
+            <div style="width: 100%; padding-left: 4px; padding-right: 4px;">
+                <p style="display: inline-block; margin: 0; width: 50%;" class="time-used"><i class="mdui-icon material-icons">&#xe425;</i> {{ round(microtime(true) - APP_START,3) }}ms</p>
+                <p style="display: inline-block; text-align: right; width: 49%; margin: 0;"><i class="mdui-icon material-icons">&#xe163;</i> {{ APP_VERSION . "." .APP_ISSUE }}</p>
+            </div>
+        </div>
     </div>
 
 
