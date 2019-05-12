@@ -143,7 +143,7 @@
 <script>
     $(document).ready(function () {
         $("title", top.window.document)[0].innerHTML = "@yield("action") | {{ env("APP_NAME") }}";
-        $("title", top.window.document)[0].innerHTML = "@yield("action") | {{ env("APP_NAME") }}";
+        $(".time-used", top.window.document)[0].innerHTML = '<i class="mdui-icon material-icons">&#xe425;</i> {{ round(microtime(true) - APP_START,3) }}ms';
     });
 </script>
 
