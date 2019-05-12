@@ -75,14 +75,17 @@
 
     </div>
 
-    <div class="mdui-collapse" mdui-collapse>
-        <ul class="mdui-list" mdui-collapse="{accordion: false}" style="overflow-x: scroll;">
-            <?php $dirTree = (new \App\Parser\DirParser())->getDirectoryTree(APP_ROOT . env("DOC_PATH")) ?>
-            {!! (new \App\Parser\DocListParser())->htmlParser($dirTree) !!}
-        </ul>
+    <div>
+        <div class="mdui-collapse" mdui-collapse>
+            <ul class="mdui-list" mdui-collapse="{accordion: false}" style="overflow-x: scroll;">
+                <?php $dirTree = (new \App\Parser\DirParser())->getDirectoryTree(APP_ROOT . env("DOC_PATH")) ?>
+                {!! (new \App\Parser\DocListParser())->htmlParser($dirTree) !!}
+            </ul>
+        </div>
     </div>
 
-    <div class="bottom-bar mdui-typo" style="position: absolute; bottom: 0; width: 100%;">
+
+    <div class="bottom-bar mdui-typo" style="position: relative; bottom: 0; width: 100%;">
 
         <div class="link-bar" style="text-align: center">
             <p style="margin-bottom: 2px;"><a href="https://th-res.yoyoko233.top:9000/">东方万物集</a></p>
@@ -95,6 +98,7 @@
                 <p style="display: inline-block; text-align: right; width: 49%; margin: 0;"><i class="mdui-icon material-icons">&#xe163;</i> {{ APP_VERSION . "." .APP_ISSUE }}</p>
             </div>
         </div>
+
     </div>
 
 
