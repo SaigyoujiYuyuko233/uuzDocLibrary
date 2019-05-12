@@ -1,0 +1,19 @@
+ip: 172.16.90.128
+memory: 512
+cpus: 4
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+folders:
+    -
+        map: 'D:\PHP application\uuzDocLibrary'
+        to: /home/vagrant/code
+sites:
+    -
+        map: uuzdoclibrary.develop
+        to: /home/vagrant/code
+databases:
+    - homestead
+name: uuzdoclibrary
+hostname: uuzdoclibrary

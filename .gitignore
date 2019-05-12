@@ -1,0 +1,5 @@
+vendor/
+.vagrant/
+public/documents/*
+.env
+public/documents
