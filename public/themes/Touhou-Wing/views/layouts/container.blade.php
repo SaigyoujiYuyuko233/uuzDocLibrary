@@ -70,7 +70,7 @@
         }
 
         /*背景图片切换 - 根据设备大小*/
-        @media (max-width: 766px) {
+        @media (max-width: 767px) {
             body{
 
                 background-repeat: no-repeat;
@@ -142,6 +142,7 @@
 
 <script>
     $(document).ready(function () {
+        $("title", top.window.document)[0].innerHTML = "@yield("action") | {{ env("APP_NAME") }}";
         $("title", top.window.document)[0].innerHTML = "@yield("action") | {{ env("APP_NAME") }}";
     });
 </script>

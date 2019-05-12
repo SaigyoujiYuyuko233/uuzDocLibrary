@@ -49,6 +49,14 @@
         .mdui-list-item-content{
             margin-left: 8px !important;
         }
+
+        @media (max-width: 767px) {
+            .bottom-bar{
+                position: relative !important;
+            }
+        }
+
+
     </style>
 
     @yield("header")
@@ -63,7 +71,7 @@
     </div>
 </div>
 
-<div class="mdui-drawer" style="border-right: 1px solid rgba(229,229,229,0.94); overflow: auto;" id="doc-list">
+<div class="mdui-drawer" style="border-right: 1px solid rgba(229,229,229,0.94); overflow: auto; height: 100%" id="doc-list">
     <div class="logo" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
         <div class="img-control">
             <img style="width: 100%;" src="{{ asset("/favicon.png") }}">
@@ -85,7 +93,7 @@
     </div>
 
 
-    <div class="bottom-bar mdui-typo" style="position: relative; bottom: 0; width: 100%;">
+    <div class="bottom-bar mdui-typo" style="position: absolute; bottom: 0; width: 100%;">
 
         <div class="link-bar" style="text-align: center">
             <p style="margin-bottom: 2px;"><a href="https://th-res.yoyoko233.top:9000/">东方万物集</a></p>
@@ -100,7 +108,6 @@
         </div>
 
     </div>
-
 
 </div>
 
