@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="080c71fd-bb70-44fa-9349-78f429afb186" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/master.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +48,7 @@
         <counts>
           <entry key="env" value="62" />
           <entry key="example" value="79" />
-          <entry key="gitattributes" value="15" />
+          <entry key="gitattributes" value="28" />
           <entry key="gitignore" value="38" />
           <entry key="json" value="18" />
           <entry key="md" value="193" />
@@ -67,6 +66,7 @@
           <entry key="Markdown" value="193" />
           <entry key="PHP" value="4159" />
           <entry key="PLAIN_TEXT" value="68" />
+
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -448,12 +448,11 @@
       <updated>1557298099865</updated>
       <workItem from="1557298105616" duration="7082000" />
       <workItem from="1557488641121" duration="8633000" />
-      <workItem from="1557498776935" duration="46122000" />
+      <workItem from="1557498776935" duration="46259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66018000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -740,12 +739,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="87" column="64" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
