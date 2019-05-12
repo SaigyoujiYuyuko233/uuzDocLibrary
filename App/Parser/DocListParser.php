@@ -45,9 +45,14 @@ class DocListParser{
 
             // 如果不是数组 - 文件
             if (is_array($value) == false){
+
+                // 替换文件拓展名
+                $tmp = explode(".", $value);
+                $docName =  str_replace("." . end($tmp), "", $value);
+
                 $file_html .= "  <li class=\"mdui-list-item mdui-ripple\" value='$value' onclick='doc(\"$value\");'>
                                     <i class=\"mdui-list-item-icon mdui-icon material-icons\">&#xe865;</i>
-                                    <div class=\"mdui-list-item-content\">$value</div>
+                                    <div class=\"mdui-list-item-content\">$docName</div>
                                   </li>";
 
                 continue;

@@ -64,7 +64,7 @@
         }
 
         /*背景图片切换 - 根据设备大小*/
-        @media (max-width: 767px) {
+        @media (max-width: 766px) {
             body{
 
                 background-repeat: no-repeat;
@@ -76,6 +76,8 @@
         
         @media (min-width: 1024px) {
             body{
+                background-repeat: no-repeat;
+                background-attachment: fixed;
                 background-image: url("{{ asset("/images/background-images/") . rand(1,2) . ".png" }}");
             }
         }

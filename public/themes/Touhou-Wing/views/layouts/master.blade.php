@@ -64,7 +64,7 @@
 </div>
 
 <div class="mdui-drawer" style="border-right: 1px solid rgba(229,229,229,0.94); overflow: auto;" id="doc-list">
-    <div class="logo mdui-col-md-12 logo mdui-col-sm-0" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
+    <div class="logo" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
         <div class="img-control">
             <img style="width: 100%;" src="{{ asset("/favicon.png") }}">
             <p style="text-align: center; font-size: 24px; margin-top: 12px; margin-bottom: 6px;">{{ env("APP_NAME") }}</p>
@@ -73,11 +73,12 @@
     </div>
 
     <div class="mdui-collapse" mdui-collapse>
-        <ul class="mdui-list" mdui-collapse="{accordion: false}">
+        <ul class="mdui-list" mdui-collapse="{accordion: false}" style="overflow-x: scroll;">
             <?php $dirTree = (new \App\Parser\DirParser())->getDirectoryTree(APP_ROOT . env("DOC_PATH")) ?>
             {!! (new \App\Parser\DocListParser())->htmlParser($dirTree) !!}
         </ul>
     </div>
+
 
 </div>
 
