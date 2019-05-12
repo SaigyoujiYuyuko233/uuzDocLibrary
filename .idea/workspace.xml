@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="080c71fd-bb70-44fa-9349-78f429afb186" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Parser/DocListParser.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Parser/DocListParser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/container.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/container.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/master.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,9 +26,9 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Vagrantfile" value="1" />
-          <entry key="env" value="4" />
+          <entry key="env" value="7" />
           <entry key="example" value="4" />
-          <entry key="gitignore" value="3" />
+          <entry key="gitignore" value="5" />
           <entry key="json" value="2" />
           <entry key="md" value="6" />
           <entry key="php" value="47" />
@@ -39,19 +36,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key=".env file" value="8" />
+          <entry key=".env file" value="11" />
           <entry key="Blade" value="20" />
           <entry key="JSON" value="2" />
           <entry key="Markdown" value="6" />
           <entry key="PHP" value="27" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="env" value="59" />
+          <entry key="env" value="62" />
           <entry key="example" value="79" />
-          <entry key="gitignore" value="37" />
+          <entry key="gitignore" value="38" />
           <entry key="json" value="10" />
           <entry key="md" value="193" />
           <entry key="php" value="7196" />
@@ -61,13 +58,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key=".env file" value="138" />
+          <entry key=".env file" value="141" />
           <entry key="Blade" value="3021" />
           <entry key="HTML" value="76" />
           <entry key="JSON" value="10" />
           <entry key="Markdown" value="193" />
           <entry key="PHP" value="4099" />
-          <entry key="PLAIN_TEXT" value="52" />
+          <entry key="PLAIN_TEXT" value="53" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -136,11 +133,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/container.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="79" column="45" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+            <state relative-caret-position="255">
+              <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -177,8 +192,6 @@
         <option value="$PROJECT_DIR$/public/documents/测试文档.md" />
         <option value="$PROJECT_DIR$/storage/cache/views/.gitignore" />
         <option value="$PROJECT_DIR$/App/Parser/DirParser.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/.env.example" />
         <option value="$PROJECT_DIR$/public/themes/Touhou-Wing/views/HttpCode/404.blade.php" />
         <option value="$PROJECT_DIR$/UuzDocLibrary/router/web.php" />
@@ -198,6 +211,8 @@
         <option value="$PROJECT_DIR$/App/Parser/DocListParser.php" />
         <option value="$PROJECT_DIR$/App/Http/Document/ReadController.php" />
         <option value="$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/container.blade.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -364,11 +379,6 @@
               <item name="UuzDocLibrary" type="462c0819:PsiDirectoryNode" />
               <item name="router" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="uuzDocLibrary" type="b2602c69:ProjectViewProjectNode" />
-              <item name="uuzDocLibrary" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -422,12 +432,12 @@
       <updated>1557298099865</updated>
       <workItem from="1557298105616" duration="7082000" />
       <workItem from="1557488641121" duration="8633000" />
-      <workItem from="1557498776935" duration="45678000" />
+      <workItem from="1557498776935" duration="45927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61393000" />
+    <option name="totallyTimeSpent" value="61642000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -570,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Parser/DirParser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -588,13 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -738,6 +734,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/container.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="70" column="3" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/themes/Touhou-Wing/views/doc/docx.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -749,10 +752,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/themes/Touhou-Wing/views/layouts/container.blade.php">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="79" column="45" selection-start-line="79" selection-start-column="45" selection-end-line="79" selection-end-column="45" />
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
