@@ -3,3 +3,4 @@ vendor/
 public/documents/*
 .env
 public/documents
+.phpunit.result.cache
