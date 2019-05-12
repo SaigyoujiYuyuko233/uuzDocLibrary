@@ -47,9 +47,36 @@
             padding: 45px;
         }
 
+        .markdown-body{
+            background-color: rgba(251,251,251,0.94);
+            opacity: 0.9;
+
+            border: rgba(232,232,232,0.94) 1px solid;
+
+            padding: 12px 12px 24px 12px;
+            border-radius: 4px;
+        }
+
         @media (max-width: 767px) {
             .md-container {
                 padding: 15px;
+            }
+        }
+
+        /*背景图片切换 - 根据设备大小*/
+        @media (max-width: 767px) {
+            body{
+
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100%;
+                background-image: url("{{ asset("/images/background-images/m-") . rand(1,2) . ".png" }}");
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            body{
+                background-image: url("{{ asset("/images/background-images/") . rand(1,2) . ".png" }}");
             }
         }
 

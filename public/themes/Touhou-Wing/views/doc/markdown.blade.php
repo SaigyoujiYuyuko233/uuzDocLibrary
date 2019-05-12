@@ -17,8 +17,11 @@
 
 @section("content")
     <div class="md-container">
-        <h1 style="margin-bottom: 4px">{{ $docName }}</h1>
-        <hr style="margin-bottom: 30px;">
+        <div class="title">
+            <h1 style="margin-bottom: 4px">{{ $docName }}</h1>
+            <div class="mdui-divider-dark" style="margin-bottom: 30px; margin-top: 10px;"></div>
+        </div>
+
         <div class="markdown-body">
             {!! $markdown !!}
         </div>

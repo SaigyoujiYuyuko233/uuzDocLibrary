@@ -33,9 +33,6 @@ class ReadController{
         // 获取文件拓展名
         $fileFormat = pathinfo($path)['extension'];
 
-        // 原始 html
-        $markdown = '';
-
 
         // md 文件
         if ($fileFormat == "md"){
@@ -56,12 +53,13 @@ class ReadController{
             return;
         }
 
+
         // word 文件
         if ($fileFormat == "docx" || $fileFormat == "doc"){
 
             // 解析
             $docx = new Docx($path);
-            $docxHtml = $docx->render(Docx::RENDER_MODE_HTML);
+            $docxHtml = @$docx->render(Docx::RENDER_MODE_HTML);
 
             // 渲染视图
             echo views()->render("doc.docx", [

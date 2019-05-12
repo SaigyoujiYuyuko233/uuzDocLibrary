@@ -19,8 +19,11 @@
     <div class="mdui-center" style="margin-top: 80px;">
         <div class="mdui-container">
             <div class="docx">
-                <h1 style="margin-bottom: 4px">{{ $docName }}</h1>
-                <hr style="margin-bottom: 30px;">
+                <div class="title">
+                    <h1 style="margin-bottom: 4px">{{ $docName }}</h1>
+                    <div class="mdui-divider-dark" style="width: 65%;"></div>
+                </div>
+
                 {!! $docx !!}
             </div>
         </div>

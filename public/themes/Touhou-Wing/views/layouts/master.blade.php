@@ -41,6 +41,14 @@
         ::-webkit-scrollbar-thumb{
             background: #1396FF;
         }
+
+        .mdui-collapse-item-body .mdui-list-item{
+            padding-left: 30px !important;
+        }
+
+        .mdui-list-item-content{
+            margin-left: 8px !important;
+        }
     </style>
 
     @yield("header")
