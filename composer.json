@@ -1,12 +1,14 @@
 {
   "require-dev": {
-        "laravel/homestead": "^8.4"
+        "laravel/homestead": "^8.4",
+        "phpunit/phpunit": "^8.1",
+        "phpunit/php-code-coverage": "^7.0"
     },
     "require": {
         "bramus/router": "^1.4",
         "jenssegers/blade": "^1.1",
         "vlucas/phpdotenv": "^3.3",
         "erusev/parsedown": "^1.7",
-    "philgale92/docx": "^3.7"
+        "philgale92/docx": "^3.7"
     }
  }
