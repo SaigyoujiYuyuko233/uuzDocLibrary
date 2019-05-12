@@ -1,8 +1,8 @@
 vendor/
 .vagrant/
 public/documents/*
-.env
 public/documents
 .phpunit.result.cache
 UuzDocLibrary.tar
 coverage.xml
+.env
