@@ -34,9 +34,10 @@ notifications:
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+- git add .
 - tar --exclude="./public/resources" --exclude="./Vagrantfile" --exclude="./.env.travis"
   --exclude="./env" --exclude="./.vagrant" --exclude="./Homestead.yaml" --exclude="./.idea"
-  --exclude="./.git" --exclude="./vendor"  -cvf UuzDocLibrary.tar ./
+  --exclude="./.git" --exclude="./vendor"  -cvPf UuzDocLibrary.tar ./*
 
 deploy:
 
