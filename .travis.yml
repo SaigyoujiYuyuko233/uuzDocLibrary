@@ -1,62 +1,42 @@
 language: php
-
 php:
 - 7.2
-
 matrix:
   fast_finish: true
-
   allow_failures:
   - env: TEST_SUITE=Coverage
-
 env:
   matrix:
   - TEST_SUITE=Testing
   - TEST_SUITE=Coverage
-
 cache:
   directories:
   - "$HOME/.composer/cache"
-
 sudo: true
-
 services:
-  - mysql
-
+- mysql
 install:
-  - travis_retry composer self-update
-  - travis_retry composer install --prefer-dist --optimize-autoloader
-  - travis_retry mysql -e 'CREATE DATABASE IF NOT EXISTS travis;'
-  - travis_retry cp .env.travis .env
-
+- travis_retry composer self-update
+- travis_retry composer install --prefer-dist --optimize-autoloader
+- travis_retry mysql -e 'CREATE DATABASE IF NOT EXISTS travis;'
+- travis_retry cp .env.travis .env
 script:
-  - if [ "$TEST_SUITE" = "Testing" ]; then vendor/bin/phpunit -c phpunit.xml; fi;
-  - if [ "$TEST_SUITE" = "Coverage" ]; then vendor/bin/phpunit -c phpunit.xml --coverage-clover=coverage.xml; fi;
-
+- if [ "$TEST_SUITE" = "Testing" ]; then vendor/bin/phpunit -c phpunit.xml; fi;
+- if [ "$TEST_SUITE" = "Coverage" ]; then vendor/bin/phpunit -c phpunit.xml --coverage-clover=coverage.xml;
+  fi;
 notifications:
-
   webhooks:
   - https://outlook.office.com/webhook/7744ba6a-128c-4acd-b861-f5e15826c761@5f8fa22c-3e35-48b0-96e4-8999bde9ff62/TravisCI/209387eb347a474a815bc9224be9b265/790fd74b-5ce0-4ee8-b240-65585e725f00
   - https://outlook.office.com/webhook/7744ba6a-128c-4acd-b861-f5e15826c761@5f8fa22c-3e35-48b0-96e4-8999bde9ff62/TravisCI/ec3a1abfe11e46ee9b387726896b1b60/790fd74b-5ce0-4ee8-b240-65585e725f00
-
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-  - tar --exclude="./public/resources" --exclude="./Vagrantfile" --exclude="./.env.travis"
-    --exclude="./env" --exclude="./.vagrant" --exclude="./Homestead.yaml" --exclude="./.idea"
-    --exclude="./.git" --exclude="./vendor"  -cvf UuzDocLibrary.tar ./
-
+- bash <(curl -s https://codecov.io/bash)
+- tar --exclude="./public/resources" --exclude="./Vagrantfile" --exclude="./.env.travis"
+  --exclude="./env" --exclude="./.vagrant" --exclude="./Homestead.yaml" --exclude="./.idea"
+  --exclude="./.git" --exclude="./vendor"  -cvf UuzDocLibrary.tar ./
 deploy:
-
   provider: releases
-
   api_key:
-    secure: g1lZQPE+Jc8A2AMk2+B5b4nwQQp77UDl4HavDRew/4ptln9jyXnG6X7Cl7RzA5S4KY6kkRdChVMHBZWCRJ3kBZd/xJc/l1Le9HM219l1XQh+GKldabw4NIJLUVlRYhLIeXTxWM/il2WmGFdQbVXxZg/xn/eseKwARi749it/maM4AgtZ1wW560osdGEvsx8WdJeNdIrtqkWJU0/6fB7D1m1Rwog0RYMH5NZ0eQJYXaGqJoj5WkpqfugT/DJkRKDDpqz4dp3BnBsotHvFSbvkRa48vQGYKypuTE6qX2E8vtctNVx6c2ula4VBe1iiqIMJ06ZAEIzSDXLYVoOIqPP8gURYGAWfxj8T+i7JgU/i0HcI2cHUNxf25PpEB3niXBC8OB/T2FDesth7KAjDcu5ZPBOosXr2yBQQnTOFOLcZ+6G+4SeA5LodvhEmNyBHJgd6wvDF2HvNtQ7dvRvEXmTkRmlGo0Lb0vmHDLFDIGRHI/urnZyfQ7vM4lHSBchHgSOXWsRp6A1U1lx7EwybNrJPCeL6exv3clMi0UMwyYW5w0dK9Y+rxNBkv9+dSDMML1P++9sQXX76tp0q6LWEtDiRbKDKsxcrjNoTGvK2mBIn3CqyjwFByCRJOo99OPRG1aHPLUf4RIXdRYWVv9yaI6RDUfc7RXmaOT4BiQfwaaL9ikQ=
-
-  file:
-  - "./UuzDocLibrary.tar"
-
-  skip_cleanup: true
-
+    secure: gIUi7a/Dj7kokdpnVYZG7OkC+GjzBUtQ6cQ/rEc8EblthLFInrQ7U4iAbL+su2VG7QjD+p4/dj3OqRsTJoi52ZkmzQFWoWMlR0NCJJwL5x1SzF6+neWRG3WjsYRFLvGk3trMScRHdIgi4apkkQrGyb8CWt5U0g+j8nypzUBF23EHU/FY/8qbEwfOsfmBRlQTxsjFmIaOc32eGucMAPysOu1TxOD16omEWgoI2XcqE3JcIffEUmK0CyKgG3FlaLgG4uWipvWS85slYfICtp86HQic7Q9xiVZ8fwXkLoLvBoxFIbcCINkEAG+V3FtNEQtezu7vGuVMfgM+DakJl6BpZAUrN7Rn22+rJAsbT25ue2DGxTfI3++vb/09jWAA9zrzeuyTtrD08XfeuhhKywhFWlaKA7QmsN8cj3Mblo4soX3ZXOC+Z01tFWvtORBUelFKSrOSBsFPT6WabmXiIQ2AANr8DaML+FAVutJvwMF+dvUdFyjUA0+dBC+YpM2lbYPizAdwVnBUo2YBx86cgjQl/BlWY8OVXhDY50l7mlN7kzBm4CsCzi+Fv8apDDUlN885zWhbPcwbTY5FkG36M17/vkiU8pYVxgGUVQD628rMOqSiGhIDNUTnhVmoYQI1rve1+R0q6TbmDUg6DZzXzsTD+Iwm0e6u0OrMJDNralQHXtc=
+  file: UuzDocLibrary.tar
   on:
-    tags: true
     repo: SaigyoujiYuyuko233/uuzDocLibrary

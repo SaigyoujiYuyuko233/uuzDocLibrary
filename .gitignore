@@ -4,3 +4,4 @@ public/documents/*
 .env
 public/documents
 .phpunit.result.cache
+.phpunit.result.cache
