@@ -10,7 +10,7 @@
  */
 ?>
 
-@extends("layouts.container")
+@extends("layouts.master")
 
 @section("action") 404 @endsection
 

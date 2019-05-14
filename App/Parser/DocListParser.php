@@ -29,15 +29,23 @@ class DocListParser{
 
                 $tmp = $this->htmlParser($value);
 
-                $dir_html .= '<li class="mdui-collapse-item">
+                $dir_html .= '
+                        <ul class="mdui-list" id="path=' . $key . '" mdui-collapse>
+                            <li class="mdui-collapse-item" id="open=' . $key . '">
                                 <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
                                     <i class="mdui-list-item-icon mdui-icon material-icons">folder</i>
                                     <div class="mdui-list-item-content">' . $key . '</div>
                                     <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
                                 </div>
-                                    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-                                     <ul class="mdui-list" mdui-collapse="{accordion: false}" id="path=' . $key . '">
-                                    ' . $tmp . '</ul></ul>';
+                                
+                                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                                    ' . $tmp . '
+                                </ul>
+                                
+                            </li>
+                        </ul>
+                    
+                ';
 
                 continue;
             }

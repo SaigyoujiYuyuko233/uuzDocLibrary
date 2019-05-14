@@ -1,0 +1,55 @@
+language: php
+
+php:
+- 7.2
+
+matrix:
+  fast_finish: true
+
+env:
+  matrix:
+  - TEST_SUITE=Testing
+
+cache:
+  directories:
+  - "$HOME/.composer/cache"
+
+sudo: true
+
+services:
+  - mysql
+
+install:
+  - travis_retry composer self-update
+  - travis_retry composer install --prefer-dist --optimize-autoloader
+  - travis_retry mysql -e 'CREATE DATABASE IF NOT EXISTS travis;'
+  - travis_retry cp .env.travis .env
+script:
+  - if [ "$TEST_SUITE" = "Testing" ]; then vendor/bin/phpunit -c phpunit.xml --coverage-clover=coverage.xml;fi;
+
+notifications:
+  webhooks:
+  - https://outlook.office.com/webhook/7744ba6a-128c-4acd-b861-f5e15826c761@5f8fa22c-3e35-48b0-96e4-8999bde9ff62/TravisCI/209387eb347a474a815bc9224be9b265/790fd74b-5ce0-4ee8-b240-65585e725f00
+  - https://outlook.office.com/webhook/7744ba6a-128c-4acd-b861-f5e15826c761@5f8fa22c-3e35-48b0-96e4-8999bde9ff62/TravisCI/ec3a1abfe11e46ee9b387726896b1b60/790fd74b-5ce0-4ee8-b240-65585e725f00
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+- tar --exclude="./public/resources" --exclude="./Vagrantfile" --exclude="./.env.travis"
+  --exclude="./env" --exclude="./.vagrant" --exclude="./Homestead.yaml" --exclude="./.idea"
+  --exclude="./.git" --exclude="./vendor"  -cvPf UuzDocLibrary.tar ./*
+
+deploy:
+
+  provider: releases
+
+  skip_cleanup: true
+
+  api_key:
+    secure: gIUi7a/Dj7kokdpnVYZG7OkC+GjzBUtQ6cQ/rEc8EblthLFInrQ7U4iAbL+su2VG7QjD+p4/dj3OqRsTJoi52ZkmzQFWoWMlR0NCJJwL5x1SzF6+neWRG3WjsYRFLvGk3trMScRHdIgi4apkkQrGyb8CWt5U0g+j8nypzUBF23EHU/FY/8qbEwfOsfmBRlQTxsjFmIaOc32eGucMAPysOu1TxOD16omEWgoI2XcqE3JcIffEUmK0CyKgG3FlaLgG4uWipvWS85slYfICtp86HQic7Q9xiVZ8fwXkLoLvBoxFIbcCINkEAG+V3FtNEQtezu7vGuVMfgM+DakJl6BpZAUrN7Rn22+rJAsbT25ue2DGxTfI3++vb/09jWAA9zrzeuyTtrD08XfeuhhKywhFWlaKA7QmsN8cj3Mblo4soX3ZXOC+Z01tFWvtORBUelFKSrOSBsFPT6WabmXiIQ2AANr8DaML+FAVutJvwMF+dvUdFyjUA0+dBC+YpM2lbYPizAdwVnBUo2YBx86cgjQl/BlWY8OVXhDY50l7mlN7kzBm4CsCzi+Fv8apDDUlN885zWhbPcwbTY5FkG36M17/vkiU8pYVxgGUVQD628rMOqSiGhIDNUTnhVmoYQI1rve1+R0q6TbmDUg6DZzXzsTD+Iwm0e6u0OrMJDNralQHXtc=
+
+  file: UuzDocLibrary.tar
+
+  on:
+    tags: true
+    all_branches: true
+    repo: SaigyoujiYuyuko233/uuzDocLibrary
