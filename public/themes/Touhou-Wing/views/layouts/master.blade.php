@@ -55,8 +55,99 @@
                 position: relative !important;
             }
         }
+    </style>
 
+    <style>
+        .md-container {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            padding: 45px;
 
+            margin-left: 6%;
+            vertical-align:top;
+            background-clip:padding-box;
+            color: #414042;
+            height: 34px;
+            position: relative;
+        }
+
+        .markdown-body{
+            background-color: rgba(251,251,251,0.94);
+            opacity: 0.9;
+
+            border: rgba(232,232,232,0.94) 1px solid;
+
+            padding: 12px 12px 24px 12px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 767px) {
+            .md-container {
+                padding: 15px;
+            }
+        }
+
+        /*背景图片切换 - 根据设备大小*/
+        @media (max-width: 767px) {
+            body{
+
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100%;
+                background-image: url("{{ asset("/images/background-images/m-") . rand(1,2) . ".png" }}");
+            }
+        }
+
+        @media (min-width: 1024px) {
+            body{
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-image: url("{{ asset("/images/background-images/") . rand(1,2) . ".png" }}");
+            }
+        }
+
+        .docx table {
+            border-collapse:collapse;
+        }
+
+        .docx th {
+            text-align: left;
+            text-transform: none;
+        }
+
+        .docx td, th {
+            vertical-align:top;
+            background-clip:padding-box;
+            border:1px solid #000000;
+            color: #414042;
+            height: 34px;
+            padding-left: 6px;
+            position: relative;
+        }
+
+        .docx td.has_subcell  {
+            padding-left:0;
+        }
+
+        .docx table table {
+            width:100%;
+        }
+
+        .docx td td {
+            height:72px;
+            border:none;
+            border-bottom:1px solid black;
+            min-width:110px;
+        }
+
+        .docx td table tr:last-of-type td {
+            border-bottom:0;
+        }
+
+        .docx span.indent {
+            padding-left:36px;
+        }
     </style>
 
     @yield("header")
@@ -66,8 +157,8 @@
 
 <div class="mdui-appbar mdui-shadow-0">
     <div class="mdui-toolbar" style="border-bottom: rgba(229,229,229,0.94) 1px solid;">
-        <a href="javascript:;" mdui-drawer="{target: '#doc-list'}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
-        <a href="javascript:;" class="mdui-typo-title">{{ env("APP_NAME") }}</a>
+        <a mdui-drawer="{target: '#doc-list'}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <a class="mdui-typo-title">{{ env("APP_NAME") }}</a>
     </div>
 </div>
 
@@ -142,14 +233,12 @@
         path += val;
 
         // 跳转
-        $(".iframe").attr("src", '/uuzDoc/read/' + path);
+        window.location.href = '/uuzDoc/read/' + path;
     };
 </script>
 
-<div class="frame" style="overflow: auto;">
-    <iframe class="iframe" src="/home" style="border: 0; height: calc(100% - 64px); width: 100%;">
-
-    </iframe>
+<div class="content" style="overflow: auto; width: 100%; height: calc(100% - 64px);">
+    @yield("content")
 </div>
 
 </body>

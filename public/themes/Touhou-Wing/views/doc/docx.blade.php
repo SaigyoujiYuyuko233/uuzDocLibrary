@@ -11,7 +11,7 @@
 ?>
 
 
-@extends("layouts.container")
+@extends("layouts.master")
 
 @section("action") {{ $docName }} @endsection
 
@@ -28,4 +28,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function () {
+            let doc_path_tmp = "{{ $docPath }}";
+            let doc_path = doc_path_tmp.split("|");
+
+            for (let i = 0; i < doc_path.length - 1; i++ ){
+                $("li[id='open=" + doc_path[i] + "']").eq(0).addClass("mdui-collapse-item-open");
+            }
+
+        });
+    </script>
 @endsection

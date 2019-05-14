@@ -37,7 +37,6 @@ after_success:
 - tar --exclude="./public/resources" --exclude="./Vagrantfile" --exclude="./.env.travis"
   --exclude="./env" --exclude="./.vagrant" --exclude="./Homestead.yaml" --exclude="./.idea"
   --exclude="./.git" --exclude="./vendor"  -cvPf UuzDocLibrary.tar ./*
-- git update-index --assume-unchanged .env
 
 deploy:
 

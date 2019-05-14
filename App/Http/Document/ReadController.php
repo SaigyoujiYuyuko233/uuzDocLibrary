@@ -15,7 +15,6 @@ use App\Parser\DocListParser;
 use App\Parser\DirParser;
 use App\Parser\MdParser;
 use PhilGale92Docx\Docx;
-use WordParser\WordParser;
 
 class ReadController{
 
@@ -47,7 +46,8 @@ class ReadController{
 
             echo views()->render("doc.markdown", [
                 "docName" => basename($path),
-                "markdown" => $markdown
+                "markdown" => $markdown,
+                "docPath" => $doc
             ]);
 
             return;
@@ -64,7 +64,8 @@ class ReadController{
             // 渲染视图
             echo views()->render("doc.docx", [
                 "docName" => basename($path),
-                "docx" => $docxHtml
+                "docx" => $docxHtml,
+                "docPath" => $doc
             ]);
 
             return;
